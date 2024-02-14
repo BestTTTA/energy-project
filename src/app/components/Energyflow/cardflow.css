@@ -1,0 +1,118 @@
+.circlesolar {
+  width: 5px;
+  height: 15px;
+  background-color: #f8bf14;
+  border-radius: 50%;
+  position: relative;
+  animation: moveCircle 2s infinite;
+}
+
+@keyframes moveCircle {
+  0% {
+    top: 70px;
+    left: 134px;
+  }
+  25% {
+    top: 120px;
+    left: 134px;
+  }
+  50% {
+    top: 129px;
+    left: 131px;
+  }
+  75% {
+    top: 138px;
+    left: 120px;
+  }
+  100% {
+    top: 141px;
+    left: 57px;
+  }
+}
+
+.circlebatt {
+  width: 5px;
+  height: 15px;
+  background-color: #14c7f8;
+  border-radius: 50%;
+  position: relative;
+  animation: moveCirclebatt 2s infinite;
+}
+
+@keyframes moveCirclebatt {
+  0% {
+    top: 143.5px;
+    left: 60px;
+  }
+  25% {
+    top: 143.5px;
+    left: 117px;
+  }
+  50% {
+    top: 150px;
+    left: 127px;
+  }
+  75% {
+    top: 160px;
+    left: 133px;
+  }
+  100% {
+    top: 215px;
+    left: 133px;
+  }
+}
+
+
+.circlesolarhome {
+    width: 5px;
+    height: 15px;
+    background-color: #f8bf14;
+    border-radius: 50%;
+    position: relative;
+    animation: moveCirclesolarhome 2s infinite;
+  }
+  
+  @keyframes moveCirclesolarhome {
+    0% {
+        top: 65px;
+        left: 140px;
+      }
+      100% {
+        top: 210px;
+        left: 140px;
+      }
+  }
+  
+
+  .circlegrid {
+    width: 5px;
+    height: 15px;
+    background-color: #c251ef;
+    border-radius: 50%;
+    position: relative;
+    animation: moveCirclegrid 2s infinite;
+  }
+  
+  @keyframes moveCirclegrid {
+    0% {
+      top: 123px;
+      left: 217px;
+    }
+    25% {
+      top: 123px;
+      left: 165px;
+    }
+    50% {
+      top: 127px;
+      left: 154px;
+    }
+    75% {
+      top: 140px;
+      left: 146px;
+    }
+    100% {
+      top: 207px;
+      left: 146px;
+    }
+  }
+  
