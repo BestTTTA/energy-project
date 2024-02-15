@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { InfluxDB } from "@influxdata/influxdb-client";
 
-const ACoutput2 = () => {
-  const [ACoutputData2, setACoutputData] = useState(null);
-  const [isLoadingACoutput2, setIsLoadingACoutput] = useState(true);
+const GridPF = () => {
+  const [gridPF, setGridPF] = useState(null);
+  const [isLoadingGridPF, setIsLoadingGridPF] = useState(true);
 
   useEffect(() => {
     const influxDB = new InfluxDB({
@@ -17,18 +17,18 @@ const ACoutput2 = () => {
       const fluxQuery = `
       from(bucket: "TTTA ENERGY")
       |> range(start: -1m)
-      |> filter(fn: (r) => r["_measurement"] == "Inverter2")
-      |> filter(fn: (r) => r["_field"] == "ac_output_apparent_power")
+      |> filter(fn: (r) => r["_measurement"] == "ESP32GRID")
+      |> filter(fn: (r) => r["_field"] == "PF")
       |> last()
       `;
       try {
         const result = await queryApi.collectRows(fluxQuery);
-        setACoutputData(result[0]._value);
+        setGridPF(result[0]._value);
       } catch (error) {
         console.error("Error querying InfluxDB:", error);
-        setACoutputData("Error");
+        setGridPF("Error");
       } finally {
-        setIsLoadingACoutput(false);
+        setIsLoadingGridPF(false);
       }
     };
 
@@ -36,9 +36,9 @@ const ACoutput2 = () => {
   }, []);
 
   return {
-    ACoutputData2,
-    isLoadingACoutput2,
+    gridPF,
+    isLoadingGridPF,
   };
 };
 
-export default ACoutput2;
+export default GridPF;

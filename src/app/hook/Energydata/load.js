@@ -35,7 +35,7 @@ const Gridpage = () => {
     fetchLoad();
   }, []);
 
-  return {
+  return {  
     loadData,
     isLoadingload,
   };
