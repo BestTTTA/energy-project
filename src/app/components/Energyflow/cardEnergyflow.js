@@ -13,7 +13,7 @@ export default function cardFlow() {
   const { loadData, isLoadingload } = Getload();
 
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="w-full flex justify-center items-center mb-5">
       <div className="w-[300px] h-[300px] flex flex-col p-2 bg-[url('/energyflow.svg')] bg-no-repeat bg-center ">
         <div className="circlesolar"></div>
         <div className="circlebatt"></div>

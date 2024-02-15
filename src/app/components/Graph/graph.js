@@ -38,7 +38,7 @@ export default function Graph() {
   return (
     <div className="w-full flex items-center flex-col p-2">
       <div className="w-full flex flex-rows justify-between">
-        <p className="font-bold text-lg">Energy management</p>
+        <div className="font-bold text-lg">Energy management</div>
         <div className="w-fit">
           <ButtonGroup
             className="grid grid-cols-3"

@@ -7,7 +7,6 @@ import { LineChart } from "@mui/x-charts/LineChart";
 export default function ConnectNulls() {
   const [connectNulls, setConnectNulls] = React.useState(true);
 
-  // Assuming this is your solar data
   const solarData = [3, 6, 7, 4, 9, 5, 11, 3, 7, 11, 9];
   const loadData = [3, 12, 7, 4, 10, 12, 11, 3, 7, 5, 9];
 

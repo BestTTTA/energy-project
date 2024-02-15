@@ -4,14 +4,14 @@ import GetHumid from "../hook/Energydata/humid";
 import Image from "next/image";
 
 export default function TLM() {
-    
+
     const { luxData, isLoadinglux } = Getlux();
     const { tempData, isLoadingtemp } = Gettemp();
     const { humidData, isLoadinghumid } = GetHumid();
     const iconsize = 50;
 
     return (
-        <div className="flex flex-col justify-center items-center gap-8">
+        <div className="flex flex-col justify-center gap-8 w-full">
             <div className="flex flex-row justify-center items-center w-full gap-2">
                 <Image
                     src="/png/sunny (1).png"
@@ -20,11 +20,11 @@ export default function TLM() {
                     width={iconsize}
                 />
                 <div className="flex flex-col justify-start items-start w-fit">
-                    <p className="font-bold text-xl flex flex-row items-end ">
-                        {isLoadinglux ? <p>Loading...</p> : <p>{luxData}</p>}
-                        <p className="mx-1 font-thin text-sm text-gray-400">Lux</p>
-                    </p>
-                    <p className="text-gray-400">Light intensity</p>
+                    <div className="font-bold text-xl flex flex-row items-end ">
+                        {isLoadinglux ? <div>Loading...</div> : <div>{luxData}</div>}
+                        <div className="mx-1 font-thin text-sm text-gray-400">Lux</div>
+                    </div>
+                    <div className="text-gray-400">Light intensity</div>
                 </div>
             </div>
 
@@ -36,11 +36,11 @@ export default function TLM() {
                     width={iconsize}
                 />
                 <div className="flex flex-col justify-start items-start w-fit">
-                    <p className="font-bold text-xl flex flex-row items-end ">
-                        {isLoadingtemp ? <p>Loading...</p> : <p>{tempData}</p>}
-                        <p className="mx-1 font-thin text-sm text-gray-400"> ºC</p>
-                    </p>
-                    <p className="text-gray-400">Temperature</p>
+                    <div className="font-bold text-xl flex flex-row items-end ">
+                        {isLoadingtemp ? <div>Loading...</div> : <div>{tempData}</div>}
+                        <div className="mx-1 font-thin text-sm text-gray-400"> ºC</div>
+                    </div>
+                    <div className="text-gray-400">Temperature</div>
                 </div>
             </div>
 
@@ -52,11 +52,11 @@ export default function TLM() {
                     width={iconsize}
                 />
                 <div className="flex flex-col justify-start items-start w-fit">
-                    <p className="font-bold text-xl flex flex-row items-end ">
-                        {isLoadinghumid ? <p>Loading...</p> : <p>{humidData}</p>}
-                        <p className="mx-1 font-thin text-sm text-gray-400">%RH</p>
-                    </p>
-                    <p className="text-gray-400">Humidity</p>
+                    <div className="font-bold text-xl flex flex-row items-end ">
+                        {isLoadinghumid ? <div>Loading...</div> : <div>{humidData}</div>}
+                        <div className="mx-1 font-thin text-sm text-gray-400">%RH</div>
+                    </div>
+                    <div className="text-gray-400">Humidity</div>
                 </div>
             </div>
         </div>
