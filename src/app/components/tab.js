@@ -5,9 +5,9 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import Cardenergy from "../components/cardenergy";
 import Cardvalue from "../components/Cardvalue"
-import Energygraph from "../components/energyGraph"
 import CustomTabPanel from "./Custompanel"
 import { useState } from "react";
+import Optimize from '../components/Otimize'
 
 CustomTabPanel.propTypes = {
   children: PropTypes.node,
@@ -62,14 +62,11 @@ export default function BasicTabs() {
       <CustomTabPanel value={value} index={0}>
         <Cardvalue />
         <Cardenergy />
-        <Energygraph />
+        <Optimize />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         ...
       </CustomTabPanel>
-      {/* <CustomTabPanel value={value} index={2}>
-        Item Three
-      </CustomTabPanel> */}
     </Box>
   );
 }

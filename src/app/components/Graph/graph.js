@@ -52,7 +52,7 @@ export default function Graph() {
         </div>
       </div>
       <div className="w-full grid lg:grid-cols-2 grid-cols-1 my-3 gap-4">
-        <div className="p-4 border-2 rounded-xl">
+        <div className="p-4 border-2 rounded">
           <EnergyConsumptionBar
             pvPercent={30.63}
             gridPercent={77.37}
@@ -60,7 +60,7 @@ export default function Graph() {
             gridValue={228.87}
           />
         </div>
-        <div className="p-4 border-2 rounded-xl">
+        <div className="p-4 border-2 rounded">
           <EnergyConsumptionBar2
             pvPercent={70.63}
             gridPercent={77.37}

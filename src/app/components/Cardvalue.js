@@ -1,5 +1,3 @@
-import Gettotalgrid from "../hook/Energydata/totalgrid";
-import Gettotalgridmonth from "../hook/Energydata/totalgridmonth";
 import GetSolar from "../hook/Energydata/solar"
 import GetSolar2 from "../hook/Energydata/solar2"
 import GetSolar3 from "../hook/Energydata/solar3"
@@ -10,6 +8,7 @@ import GridVoltinput from "../hook/Energydata/GridVoltinput"
 import GridPF from "../hook/Energydata/gridPF"
 import Load from "../hook/Energydata/load"
 import Image from "next/image";
+import ACoutput from "../hook/Energydata/ACoutput"
 
 export default function Cardvalue() {
     const { solarData, isLoadingsolar } = GetSolar();
@@ -32,12 +31,14 @@ export default function Cardvalue() {
     const { gridVolt, isLoadingGridVolt } = GridVoltinput();
     const { gridPF, isLoadingGridPF } = GridPF();
     let Gridinput = gridAmp * gridVolt * gridPF;
-    // Gridinput = parseFloat(Gridinput.toFixed(2));
+    Gridinput = parseFloat(Gridinput.toFixed(2));
 
 
     const { loadData, isLoadingload } = Load();
     let Loaddeximal = typeof loadData === 'number' ? parseFloat(loadData.toFixed(2)) : null;
 
+
+    const { ACdata, isLoadingACdata } = ACoutput();
 
 
     const iconsize = 50;
@@ -74,7 +75,7 @@ export default function Cardvalue() {
                     />
                     <div className="flex flex-col justify-start items-start w-fit">
                         <div className="font-bold text-lg flex flex-row items-end ">
-                            {isLoadingACoutput ? <div>Loading...</div> : <div>{AllAcoutput}</div>}
+                            {isLoadingACdata ? <div>Loading...</div> : <div>{ACdata}</div>}
                             <div className="mx-1 font-thin text-sm text-gray-400">Watt</div>
                         </div>
                         <div className="text-gray-400">AC Output</div>
