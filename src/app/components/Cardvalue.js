@@ -12,19 +12,12 @@ import Load from "../hook/Energydata/load"
 import Image from "next/image";
 
 export default function Cardvalue() {
-    const { gridData, isLoading } = Gettotalgrid();
-    const { gridDatamonth, isLoadingmonth } = Gettotalgridmonth();
-
-    let kilowattsgridmonth = (gridDatamonth * 720) / 1000;
-    let kilowattsgrid = (gridData * 24) / 1000;
-
-
     const { solarData, isLoadingsolar } = GetSolar();
     const { solarData2, isLoadingsolar2 } = GetSolar2();
     const { solarData3, isLoadingsolar3 } = GetSolar3();
     let GetSolar4 = (solarData + solarData2) / 2
     let GetAllSolar = solarData + solarData2 + solarData3 + GetSolar4
-    GetAllSolar = parseFloat(GetAllSolar.toFixed(2));
+    // GetAllSolar = parseFloat(GetAllSolar.toFixed(2));
 
 
 
@@ -32,14 +25,14 @@ export default function Cardvalue() {
     const { ACoutputData2, isLoadingACoutput2 } = GetAcOutput2();
     let Acoutput3 = (ACoutputData + ACoutputData2) / 2
     let AllAcoutput = ACoutputData + ACoutputData2 + Acoutput3
-    AllAcoutput = parseFloat(AllAcoutput.toFixed(2));
+    // AllAcoutput = parseFloat(AllAcoutput.toFixed(2));
 
 
     const { gridAmp, isLoadingGridAmp } = GridAmpinput();
     const { gridVolt, isLoadingGridVolt } = GridVoltinput();
     const { gridPF, isLoadingGridPF } = GridPF();
     let Gridinput = gridAmp * gridVolt * gridPF;
-    Gridinput = parseFloat(Gridinput.toFixed(2));
+    // Gridinput = parseFloat(Gridinput.toFixed(2));
 
 
     const { loadData, isLoadingload } = Load();
@@ -65,7 +58,7 @@ export default function Cardvalue() {
                     />
                     <div className="flex flex-col justify-start items-start w-fit">
                         <div className="font-bold text-lg flex flex-row items-end ">
-                            {isLoading ? <div>Loading...</div> : <div>{GetAllSolar}</div>}
+                            {isLoadingsolar ? <div>Loading...</div> : <div>{GetAllSolar}</div>}
                             <div className="mx-1 font-thin text-sm text-gray-400">Watt</div>
                         </div>
                         <div className="text-gray-400">Solar Input</div>
@@ -81,7 +74,7 @@ export default function Cardvalue() {
                     />
                     <div className="flex flex-col justify-start items-start w-fit">
                         <div className="font-bold text-lg flex flex-row items-end ">
-                            {isLoading ? <div>Loading...</div> : <div>{AllAcoutput}</div>}
+                            {isLoadingACoutput ? <div>Loading...</div> : <div>{AllAcoutput}</div>}
                             <div className="mx-1 font-thin text-sm text-gray-400">Watt</div>
                         </div>
                         <div className="text-gray-400">AC Output</div>
@@ -97,7 +90,7 @@ export default function Cardvalue() {
                     />
                     <div className="flex flex-col justify-start items-start w-fit">
                         <div className="font-bold text-lg flex flex-row items-end ">
-                            {isLoading ? <div>Loading...</div> : <div>{Gridinput}</div>}
+                            {isLoadingGridAmp ? <div>Loading...</div> : <div>{Gridinput}</div>}
                             <div className="mx-1 font-thin text-sm text-gray-400">Watt</div>
                         </div>
                         <div className="text-gray-400">Grid Input</div>
@@ -113,7 +106,7 @@ export default function Cardvalue() {
                     />
                     <div className="flex flex-col justify-start items-start w-fit">
                         <div className="font-bold text-lg flex flex-row items-end ">
-                            {isLoadingmonth ? <div>Loading...</div> : <div>{Loaddeximal}</div>}
+                            {isLoadingload ? <div>Loading...</div> : <div>{Loaddeximal}</div>}
                             <div className="mx-1 font-thin text-sm text-gray-400">Watt</div>
                         </div>
                         <div className="text-gray-400">Load</div>
