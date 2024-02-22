@@ -40,7 +40,7 @@ export default function Graph() {
       <div className="w-full flex flex-rows justify-between">
         <div className="font-bold text-lg">Energy management</div>
         <div className="w-fit">
-          <ButtonGroup
+          {/* <ButtonGroup
             className="grid grid-cols-3"
             variant="outlined"
             aria-label="outlined button group"
@@ -48,7 +48,7 @@ export default function Graph() {
             <Button onClick={() => setValue(0)}>Day</Button>
             <Button onClick={() => setValue(1)}>Month</Button>
             <Button onClick={() => setValue(2)}>Year</Button>
-          </ButtonGroup>
+          </ButtonGroup> */}
         </div>
       </div>
       <div className="w-full grid lg:grid-cols-2 grid-cols-1 my-3 gap-4">

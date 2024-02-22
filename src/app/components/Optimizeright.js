@@ -36,7 +36,7 @@ export default function Optimizeright() {
             </div>
         );
     };
-
+    
     return (
         <div className="w-full p-2">
             <div className="font-bold text-lg">Optimization</div>
